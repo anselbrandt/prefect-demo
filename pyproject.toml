@@ -1,0 +1,22 @@
+[project]
+name = "prefect-demo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12.8"
+dependencies = [
+    "boto3>=1.38.13",
+    "pandas>=2.2.3",
+    "prefect>=3.4.1",
+    "prefect-aws>=0.5.10",
+    "prefect-docker>=0.6.4",
+    "sagemaker>=2.244.0",
+    "taskipy>=1.14.1",
+    "xgboost>=3.0.0",
+]
+
+[tool.taskipy.tasks]
+server = "uv run prefect server start"
+pool = "prefect work-pool create --type process my-work-pool"
+worker = "PREFECT_API_URL=http://127.0.0.1:4200/api prefect worker start --pool my-work-pool"
+build = "uv run create_deployment.py"
