@@ -6,10 +6,12 @@ readme = "README.md"
 requires-python = ">=3.12.8"
 dependencies = [
     "boto3>=1.38.13",
+    "gitpython>=3.1.44",
     "pandas>=2.2.3",
     "prefect>=3.4.1",
     "prefect-aws>=0.5.10",
     "prefect-docker>=0.6.4",
+    "python-dotenv>=1.1.0",
     "sagemaker>=2.244.0",
     "taskipy>=1.14.1",
     "xgboost>=3.0.0",
