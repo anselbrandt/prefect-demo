@@ -9,7 +9,7 @@ token = os.getenv("GITHUB_TOKEN")
 if not token:
     raise ValueError("GITHUB_TOKEN not found in .env")
 
-repo_path = Path.cwd()
+repo_path = Path(__file__).resolve().parent.parent
 
 repo = Repo(repo_path)
 assert not repo.bare
